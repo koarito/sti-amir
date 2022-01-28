@@ -6,6 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sti-amir-dao" />
+        <module name="sti-amir-service" />
+        <module name="sti-amir-test-unit" />
+        <module name="sti-amir-service-impl" />
+        <module name="sti-amir-dao-impl" />
+        <module name="sti-amir-domain" />
       </profile>
     </annotationProcessing>
   </component>

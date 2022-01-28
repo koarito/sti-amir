@@ -23,4 +23,17 @@
         <maven.resources.plugin.version>3.0.1</maven.resources.plugin.version>
     </properties>
 
+    <modules>
+        <module>sti-amir-domain</module>
+        <module>sti-amir-service</module>
+        <module>sti-amir-service-impl</module>
+        <module>sti-amir-dao</module>
+        <module>sti-amir-dao-impl</module>
+        <module>sti-amir-test-unit</module>
+    </modules>
+
+    <dependencyManagement>
+
+    </dependencyManagement>
+
 </project>
