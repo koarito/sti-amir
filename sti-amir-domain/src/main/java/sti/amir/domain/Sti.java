@@ -21,7 +21,7 @@ public class Sti {
             return this;
         }
         public Sti build(){
-            return new Sti(students);
+            return new Sti(this.students);
         }
     }
 }

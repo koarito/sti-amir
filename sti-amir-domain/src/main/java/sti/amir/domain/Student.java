@@ -105,7 +105,7 @@ public class Student {
         }
 
         public Student build(){
-            return new Student(givenName, surname, personNmr, courses, computer);
+            return new Student(this.givenName, this.surname, this.personNmr, this.courses, this.computer);
         }
     }
 }
