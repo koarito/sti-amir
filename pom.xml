@@ -24,12 +24,12 @@
     </properties>
 
     <modules>
-        <module>sti-amir-domain</module>
-        <module>sti-amir-service</module>
-        <module>sti-amir-service-impl</module>
-        <module>sti-amir-dao</module>
-        <module>sti-amir-dao-impl</module>
-        <module>sti-amir-test-unit</module>
+        <module>sti-amir-ali-domain</module>
+        <module>sti-amir-ali-service</module>
+        <module>sti-amir-ali-service-impl</module>
+        <module>sti-amir-ali-dao</module>
+        <module>sti-amir-ali-dao-impl</module>
+        <module>sti-amir-ali-test-unit</module>
     </modules>
 
     <dependencyManagement>
