@@ -3,74 +3,49 @@ package sti.amir.domain;
 import javafx.util.Builder;
 
 public class Course {
-    private int yhPoints;
-    private Teacher teacher;
-    private int courseCode;
-    private int amountOfHours;
+    private final int YH_POINTS;
+    private final Teacher TEACHER;
+    private final int COURSE_CODE;
+    private final int AMOUNT_OF_HOURS;
 
-    public Course(int yhPoints, Teacher teacher, int courseCode, int amountOfHours) {
-        this.yhPoints = yhPoints;
-        this.teacher = teacher;
-        this.courseCode = courseCode;
-        this.amountOfHours = amountOfHours;
-    }
 
     public Course (CourseBuilder builder){
-        this.yhPoints = builder.yhPoints;
-        this.teacher = builder.teacher;
-        this.courseCode = builder.courseCode;
-        this.amountOfHours = builder.amountOfHours;
+        this.YH_POINTS = builder.yhPoints;
+        this.TEACHER = builder.TEACHER;
+        this.COURSE_CODE = builder.courseCode;
+        this.AMOUNT_OF_HOURS = builder.amountOfHours;
     }
 
     public int getYhPoints() {
-        return yhPoints;
-    }
-
-    public void setYh_points(int yhPoints) {
-        this.yhPoints = yhPoints;
+        return YH_POINTS;
     }
 
     public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+        return TEACHER;
     }
 
     public int getCourseCode() {
-        return courseCode;
-    }
-
-    public void setCourseCode(int courseCode) {
-        this.courseCode = courseCode;
+        return COURSE_CODE;
     }
 
     public int getAmountOfHours() {
-        return amountOfHours;
+        return AMOUNT_OF_HOURS;
     }
 
-    public void setAmountOfHours(int amountOfHours) {
-        this.amountOfHours = amountOfHours;
-    }
-
-    public CourseBuilder build(){
-        return new CourseBuilder();
-    }
 
     public static class CourseBuilder{
         private int yhPoints;
-        private Teacher teacher;
+        private final Teacher TEACHER;
         private int courseCode;
         private int amountOfHours;
 
-        public CourseBuilder withYhPoints(int yhPoints){
-            this.yhPoints = yhPoints;
-            return this;
+
+        public CourseBuilder(Teacher teacher){
+            this.TEACHER = teacher;
         }
 
-        public CourseBuilder withTeacher(Teacher teacher){
-            this.teacher = teacher;
+        public CourseBuilder withYhPoints(int yhPoints){
+            this.yhPoints = yhPoints;
             return this;
         }
 
@@ -85,7 +60,7 @@ public class Course {
         }
 
         public Course build(){
-            return new Course(this.yhPoints, this.teacher, this.courseCode, this.amountOfHours);
+            return new Course(this);
         }
     }
 }

@@ -3,25 +3,24 @@ package sti.amir.domain;
 import java.util.List;
 
 public class Sti {
-    private List<Student> students;
+    private final List<Student> STUDENTS;
 
-    public Sti(List<Student> students) {
-        this.students = students;
-    }
     public Sti(StiBuilder builder){
-        this.students = builder.students;
+        this.STUDENTS = builder.STUDENTS;
     }
-    public static StiBuilder stiBuilder(){return new StiBuilder();}
+
+    public List<Student> getStudents() {
+        return STUDENTS;
+    }
 
     public static class StiBuilder{
-        private List<Student> students;
+        private final List<Student> STUDENTS;
 
-        public StiBuilder withStudents(List<Student> students){
-            this.students = students;
-            return this;
+        public StiBuilder (List<Student> students){
+            this.STUDENTS = students;
         }
         public Sti build(){
-            return new Sti(this.students);
+            return new Sti(this);
         }
     }
 }
