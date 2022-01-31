@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>se.sti</groupId>
-            <artifactId>sti-amir-domain</artifactId>
+            <artifactId>sti-amir-ali-domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
