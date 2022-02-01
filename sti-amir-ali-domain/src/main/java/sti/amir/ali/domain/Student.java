@@ -50,6 +50,17 @@ public class Student {
         return new StudentBuilder();
     }
 
+    public String coursesToString(){
+        String string = "";
+
+        if(courses != null){
+        for (Course x : courses)
+            string += x.getNAME() + " ";
+        return string;}
+
+        return null;
+    }
+
     @Override
     public String toString(){
         return GIVEN_NAME + " " + SURNAME;

@@ -1,6 +1,7 @@
 package sti.amir.ali.domain;
 
 public class Course {
+    private final String NAME;
     private final int YH_POINTS;
     private final Teacher TEACHER;
     private final int COURSE_CODE;
@@ -8,11 +9,14 @@ public class Course {
 
 
     private Course(CourseBuilder builder) {
+        this.NAME = builder.name;
         this.YH_POINTS = builder.yhPoints;
         this.TEACHER = builder.teacher;
         this.COURSE_CODE = builder.courseCode;
         this.AMOUNT_OF_HOURS = builder.amountOfHours;
     }
+
+    public String getNAME() {return NAME;}
 
     public int getYhPoints() {
         return YH_POINTS;
@@ -35,6 +39,7 @@ public class Course {
     }
 
     public static class CourseBuilder {
+        private String name;
         private int yhPoints;
         private Teacher teacher;
         private int courseCode;
@@ -42,6 +47,11 @@ public class Course {
 
 
         public CourseBuilder() {
+        }
+
+        public CourseBuilder withName(String name){
+            this.name = name;
+            return this;
         }
 
         public CourseBuilder withTeacher(Teacher teacher) {
