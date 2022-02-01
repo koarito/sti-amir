@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ServiceTest {
-    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:sti-amir-ali.service.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:sti-amir-ali-service.xml");
     AmirAliService amirAliService = (AmirAliService) context.getBean("ServiceBean");
     @Test
     public void test(){

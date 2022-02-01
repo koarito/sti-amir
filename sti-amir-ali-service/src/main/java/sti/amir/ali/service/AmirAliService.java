@@ -11,9 +11,9 @@ public interface AmirAliService {
 
     Student addStudent();
 
-    List<Course> addCourse();
+    List<Course> addCourse(List<Course> courses, Course course);
 
-    List<Course> removeCourse();
+    List<Course> removeCourse(List<Course> courses, int courseCode);
 
     int calcSalary(Teacher teacher);
 
