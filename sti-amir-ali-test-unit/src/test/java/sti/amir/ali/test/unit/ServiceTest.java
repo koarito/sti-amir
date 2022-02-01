@@ -41,11 +41,12 @@ public class ServiceTest {
                 .withPersonNmr(256)
                 .withGivenName("Stof")
                 .withSurname("Stofi")
-                .withCourses(courses)
                 .build();
 
         List<Student> students = Arrays.asList(student1, student2, student3);
+          amirAliService.addCourse(student3, course2);
 
+         Assert.assertEquals(student3.getCourses().size(), 1);
         Assert.assertEquals("Muhamad", amirAliService.getStudent(965, students).getSurname());
  }
 }

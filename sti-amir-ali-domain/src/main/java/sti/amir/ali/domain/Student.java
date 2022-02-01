@@ -1,5 +1,6 @@
 package sti.amir.ali.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -31,7 +32,12 @@ public class Student {
     }
 
     public List<Course> getCourses() {
-        return courses;
+        try {
+            return courses;
+        } catch (NullPointerException e){
+            return new ArrayList<>();
+        }
+
     }
 
     public String getComputer() {

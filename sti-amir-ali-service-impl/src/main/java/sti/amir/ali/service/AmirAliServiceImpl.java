@@ -6,6 +6,7 @@ import sti.amir.ali.domain.Course;
 import sti.amir.ali.domain.Student;
 import sti.amir.ali.domain.Teacher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AmirAliServiceImpl implements AmirAliService{
@@ -23,14 +24,14 @@ public class AmirAliServiceImpl implements AmirAliService{
         try {
             System.out.printf("%s %s %s \n", student.getGivenName(), student.getSurname(), student.coursesToString());
         } catch (NullPointerException e) {
-            LOGGER.error("Failed to find student with that prsnmr",e);
+            LOGGER.error("Failed to find student with that personummer",e);
             return null;
         }
         LOGGER.trace("Student found");
         return student;
     }
 
-    @Override
+    /*@Override
     public Student addStudent() {
         return Student.builder()
                 .withGivenName()
@@ -39,20 +40,24 @@ public class AmirAliServiceImpl implements AmirAliService{
                 .withComputer()
                 .withPersonNmr()
                 .build();
-    }
-
+    }*/
+@Override
+public Student addStudent(){
+    return null;
+}
     @Override
-    public List<Course> addCourse(List<Course> courses, Course course) {
-
+    public void addCourse(Student student, Course course) {
+        List<Course> courses;
+        if(student.getCourses() != null){
+        courses = student.getCourses();
         courses.add(course);
-        return courses;
+        student.setCourses(courses);}
     }
-
     @Override
-    public List<Course> removeCourse(List<Course> courses, int courseCode) {
-
-        courses.removeIf(x -> x.getCourseCode() == courseCode);
-        return courses;
+    public void removeCourse(Student student, int courseCode) {
+    List<Course> courses = student.getCourses();
+    courses.removeIf(x -> x.getCourseCode() == courseCode);
+    student.setCourses(courses);
     }
 
     @Override
