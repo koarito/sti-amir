@@ -8,12 +8,11 @@ import sti.amir.ali.domain.Course;
 import sti.amir.ali.domain.Student;
 import sti.amir.ali.service.AmirAliService;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.List;
 
-public class ServiceTest {
-    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:sti-amir-ali-service.xml");
+public class TestService {
+    ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-service.xml");
     AmirAliService amirAliService = (AmirAliService) context.getBean("ServiceBean");
 
     @Test
