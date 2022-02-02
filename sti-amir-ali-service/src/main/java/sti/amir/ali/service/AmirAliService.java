@@ -9,7 +9,7 @@ import java.util.List;
 public interface AmirAliService {
     Student getStudent(int personNmr, List<Student> students);
 
-    Student addStudent();
+    Student addStudent(String givenName, String surname, List<Course> courses, String computer, int personmr);
 
     void addCourse(Student student, Course course);
 

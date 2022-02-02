@@ -32,21 +32,17 @@ public class AmirAliServiceImpl implements AmirAliService{
         return student;
     }
 
-    /*@Override
-    public Student addStudent() {
-        return Student.builder()
-                .withGivenName()
-                .withSurname()
-                .withCourses()
-                .withComputer()
-                .withPersonNmr()
-                .build();
-    }*/
-@Override
-public Student addStudent(){
-    return null;
-}
     @Override
+    public Student addStudent(String givenName, String surname, List<Course> courses, String computer, int personmr) {
+        return Student.builder()
+                .withGivenName(givenName)
+                .withSurname(surname)
+                .withCourses(courses)
+                .withComputer(computer)
+                .withPersonNmr(personmr)
+                .build();
+    }
+
     public void addCourse(Student student, Course course) {
         List<Course> courses = new ArrayList<>();
         if(student.getCourses() != null)

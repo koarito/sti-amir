@@ -33,63 +33,69 @@
     </modules>
 
     <dependencyManagement>
-<dependencies>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>5.3.13</version>
-    </dependency>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>5.3.13</version>
+            </dependency>
 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>5.3.13</version>
-    </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>5.3.13</version>
+            </dependency>
 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>5.3.13</version>
-    </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>5.3.13</version>
+            </dependency>
 
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-domain</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-service</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-service-impl</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-service-impl</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-dao</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-dao</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-dao-impl</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-dao-impl</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-    <dependency>
-        <groupId>se.sti</groupId>
-        <artifactId>sti-amir-ali-test-unit</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
+            <dependency>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-test-unit</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
-</dependencies>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.28</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
 </project>

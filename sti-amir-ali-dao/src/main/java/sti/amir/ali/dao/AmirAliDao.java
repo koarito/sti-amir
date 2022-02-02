@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public interface AmirAliDao {
 
-    Student addStudent(String givenName, String surname, int personmr, String computer);
+    Student addStudent(String givenName, String surname, int personmr, String computer, int courseCode);
 
-    void addCourse(Student student, Course course);
+    void addCourse(Student student);
 
     void removeCourse(Student student, int courseCode);
 
