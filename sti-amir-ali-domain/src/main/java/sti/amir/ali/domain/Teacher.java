@@ -43,7 +43,7 @@ public class Teacher {
 
     public static TeacherBuilder builder(){return new TeacherBuilder();}
 
-    private static class TeacherBuilder {
+    public static class TeacherBuilder {
         private String givenName;
         private String surname;
         private int personNmr;

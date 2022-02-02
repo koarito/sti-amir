@@ -17,7 +17,7 @@ public class AmirAliDaoImpl implements AmirAliDao{
 
 
     @Override
-    public Student addStudent(String givenName, String surname, int personmr, String computer, int courseCode) {
+    public Student addStudent(String givenName, String surname, int personmr, String computer) {
         Connection connection = null;
         PreparedStatement statement = null;
         boolean result;
@@ -46,13 +46,53 @@ public class AmirAliDaoImpl implements AmirAliDao{
     }
 
     @Override
-    public void addCourse(Student student) {
+    public void addCourse(Student student, Course course) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        boolean result;
+        try {
+
+            connection = getConnection();
+            statement = connection.prepareStatement
+                    ("INSERT INTO Course(courseCode, name, teacher, amount_of_hours) VALUES(?,?,?,?)");
+            statement.setInt(1, course.getCourseCode());
+            statement.setString(2, course.getNAME());
+            statement.setString(3, course.getTeacher().getSurname());
+            statement.setInt(4, course.getAmountOfHours());
+            result = statement.execute();
+        } catch (SQLException sqlException) {
+            LOGGER.error("Couldn't execute sql statement", sqlException);
+        } finally {
+            try {
+                statement.close();
+            } catch (Throwable ignore) {}
+            try {
+                connection.close();
+            } catch (Throwable ignore) {}
+        }
+
+        try {
+            connection = getConnection();
+            statement = connection.prepareStatement
+                    ("INSERT INTO Student_Course(stud_personnummer, courseCode) VALUES(?,?)");
+            statement.setInt(1, student.getPersonNmr());
+            statement.setInt(2, course.getCourseCode());
+            result = statement.execute();
+        } catch (SQLException sqlException) {
+            LOGGER.error("Couldn't execute sql statement", sqlException);
+        } finally {
+            try {
+                statement.close();
+            } catch (Throwable ignore) {}
+            try {
+                connection.close();
+            } catch (Throwable ignore) {}
+        }
 
     }
+        @Override
+        public void removeCourse (Student student,int courseCode){
 
-    @Override
-    public void removeCourse(Student student, int courseCode) {
-
-    }
+        }
 
 }
