@@ -7,6 +7,7 @@ import sti.amir.ali.domain.Student;
 import sti.amir.ali.domain.Teacher;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AmirAliServiceImpl implements AmirAliService{
@@ -47,11 +48,13 @@ public Student addStudent(){
 }
     @Override
     public void addCourse(Student student, Course course) {
-        List<Course> courses;
-        if(student.getCourses() != null){
+        List<Course> courses = new ArrayList<>();
+        if(student.getCourses() != null)
         courses = student.getCourses();
         courses.add(course);
-        student.setCourses(courses);}
+
+        student.setCourses(courses);
+
     }
     @Override
     public void removeCourse(Student student, int courseCode) {

@@ -1,6 +1,5 @@
 package sti.amir.ali.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -31,30 +30,15 @@ public class Student {
         return PERSON_NMR;
     }
 
-    public List<Course> getCourses() {
-        try {
-            return courses;
-        } catch (NullPointerException e){
-            return new ArrayList<>();
-        }
+    public List<Course> getCourses() {return courses;}
 
-    }
+    public String getComputer() {return computer;}
 
-    public String getComputer() {
-        return computer;
-    }
+    public void setComputer(String computer) {this.computer = computer;}
 
-    public void setComputer(String computer) {
-        this.computer = computer;
-    }
+    public void setCourses(List<Course> courses) {this.courses = courses;}
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-
-    public static StudentBuilder builder(){
-        return new StudentBuilder();
-    }
+    public static StudentBuilder builder(){return new StudentBuilder();}
 
     public String coursesToString(){
         String string = "";

@@ -15,15 +15,17 @@ import java.util.List;
 public class ServiceTest {
     ApplicationContext context = new ClassPathXmlApplicationContext("classpath:sti-amir-ali-service.xml");
     AmirAliService amirAliService = (AmirAliService) context.getBean("ServiceBean");
+
     @Test
-    public void test(){
+    public void test() {
         Course course1 = Course.builder()
-                        .withName("Java")
-                                .build();
+                .withName("Java")
+                .withCourseCode(975)
+                .build();
 
         Course course2 = Course.builder()
-                        .withName("Python")
-                                .build();
+                .withName("Python")
+                .build();
         List<Course> courses = Arrays.asList(course1, course2);
         Student student1 = Student.builder()
                 .withPersonNmr(879)
@@ -31,12 +33,12 @@ public class ServiceTest {
                 .withSurname("Honein")
                 .withCourses(courses)
                 .build();
-          Student student2 = Student.builder()
-                  .withPersonNmr(965)
-                  .withGivenName("Ali")
-                  .withSurname("Muhamad")
-                  .withCourses(courses)
-                  .build();
+        Student student2 = Student.builder()
+                .withPersonNmr(965)
+                .withGivenName("Ali")
+                .withSurname("Muhamad")
+                .withCourses(courses)
+                .build();
         Student student3 = Student.builder()
                 .withPersonNmr(256)
                 .withGivenName("Stof")
@@ -44,9 +46,11 @@ public class ServiceTest {
                 .build();
 
         List<Student> students = Arrays.asList(student1, student2, student3);
-          amirAliService.addCourse(student3, course2);
+        amirAliService.addCourse(student3, course1);
+        amirAliService.addCourse(student3, course2);
+        amirAliService.removeCourse(student3, 975);
 
-         Assert.assertEquals(student3.getCourses().size(), 1);
+        Assert.assertEquals(student3.getCourses().get(0).getNAME(), "Python");
         Assert.assertEquals("Muhamad", amirAliService.getStudent(965, students).getSurname());
- }
+    }
 }
