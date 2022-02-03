@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class TestDao {
     ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-dao.xml");
     AmirAliDao amirAliDao = (AmirAliDao) context.getBean("DaoBean");
-
+    Student student = amirAliDao.addStudent("Ali", "Honein", 878, "Mac");
     Teacher teacher = Teacher.builder()
             .withGivenName("Özgur")
             .withSurname("Kibar")
@@ -41,7 +41,9 @@ public class TestDao {
     }
 
     @Test
-    public void testAddCourse() {
+    public void testRemoveCourse() {
+        amirAliDao.removeCourse(student, course1.getCourseCode());
+
 
     }
 }
