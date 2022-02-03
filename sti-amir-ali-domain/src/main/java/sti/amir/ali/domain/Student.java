@@ -5,7 +5,7 @@ import java.util.List;
 public class Student {
     private final String GIVEN_NAME;
     private final String SURNAME;
-    private final int PERSON_NMR;
+    private final long PERSON_NMR;
     private List<Course> courses;
     private String computer;
 
@@ -26,9 +26,7 @@ public class Student {
         return SURNAME;
     }
 
-    public int getPersonNmr() {
-        return PERSON_NMR;
-    }
+    public long getPersonNmr() {return PERSON_NMR;}
 
     public List<Course> getCourses() {return courses;}
 
@@ -60,7 +58,7 @@ public class Student {
 
         private String givenName;
         private String surname;
-        private int personNmr;
+        private long personNmr;
         private List<Course> courses;
         private String computer;
 
@@ -76,7 +74,7 @@ public class Student {
             return this;
         }
 
-        public StudentBuilder withPersonNmr(int personNmr){
+        public StudentBuilder withPersonNmr(long personNmr){
             this.personNmr = personNmr;
             return this;
         }

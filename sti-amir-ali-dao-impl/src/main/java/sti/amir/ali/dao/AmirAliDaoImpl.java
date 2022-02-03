@@ -17,7 +17,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
 
 
     @Override
-    public Student addStudent(String givenName, String surname, int personmr, String computer) {
+    public Student createStudent(String givenName, String surname, long personmr, String computer) {
         Connection connection = null;
         PreparedStatement statement = null;
         boolean result;
@@ -28,7 +28,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
                     ("INSERT INTO Student(given_name, surname, personnummer, computer) VALUES(?,?,?,?)");
             statement.setString(1, givenName);
             statement.setString(2, surname);
-            statement.setInt(3, personmr);
+            statement.setLong(3, personmr);
             statement.setString(4, computer);
             result = statement.execute();
         } catch (SQLException sqlException) {
@@ -79,7 +79,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             connection = getConnection();
             statement = connection.prepareStatement
                     ("INSERT INTO Student_Course(stud_personnummer, courseCode) VALUES(?,?)");
-            statement.setInt(1, student.getPersonNmr());
+            statement.setLong(1, student.getPersonNmr());
             statement.setInt(2, course.getCourseCode());
             result = statement.execute();
         } catch (SQLException sqlException) {
@@ -107,7 +107,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             connection = getConnection();
             statement = connection.prepareStatement
                     ("DELETE FROM Student_Course WHERE stud_personnummer = ? AND courseCode = ?");
-            statement.setInt(1,student.getPersonNmr());
+            statement.setLong(1,student.getPersonNmr());
             statement.setInt(2,courseCode);
                     result = statement.execute();
         } catch (SQLException sqlException) {

@@ -19,7 +19,7 @@ public class AmirAliServiceImpl implements AmirAliService{
     AmirAliDao amirAliDao = (AmirAliDao) context.getBean("DaoBean");
 
     @Override
-    public Student getStudent(int personNmr, List<Student> students) {
+    public Student getStudent(long personNmr, List<Student> students) {
 
         Student student = null;
         for (Student x : students) {
@@ -37,8 +37,8 @@ public class AmirAliServiceImpl implements AmirAliService{
     }
 
     @Override
-    public Student addStudent(String givenName, String surname, List<Course> courses, String computer, int personmr) {
-        amirAliDao.addStudent(givenName,surname,personmr,computer);
+    public Student createStudent(String givenName, String surname, List<Course> courses, String computer, long personmr) {
+        amirAliDao.createStudent(givenName,surname,personmr,computer);
         return Student.builder()
                 .withGivenName(givenName)
                 .withSurname(surname)
@@ -53,15 +53,18 @@ public class AmirAliServiceImpl implements AmirAliService{
         if(student.getCourses() != null)
         courses = student.getCourses();
         courses.add(course);
-
+        amirAliDao.addCourse(student, course);
         student.setCourses(courses);
+        LOGGER.trace("Course added to student");
 
     }
     @Override
     public void removeCourse(Student student, int courseCode) {
     List<Course> courses = student.getCourses();
     courses.removeIf(x -> x.getCourseCode() == courseCode);
+    amirAliDao.removeCourse(student, courseCode);
     student.setCourses(courses);
+        LOGGER.trace("Course removed from student");
     }
 
     @Override

@@ -7,9 +7,9 @@ import sti.amir.ali.domain.Teacher;
 import java.util.List;
 
 public interface AmirAliService {
-    Student getStudent(int personNmr, List<Student> students);
+    Student getStudent(long personNmr, List<Student> students);
 
-    Student addStudent(String givenName, String surname, List<Course> courses, String computer, int personmr);
+    Student createStudent(String givenName, String surname, List<Course> courses, String computer, long personmr);
 
     void addCourse(Student student, Course course);
 

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public interface AmirAliDao {
 
-    Student addStudent(String givenName, String surname, int personmr, String computer);
+    Student createStudent(String givenName, String surname, long personmr, String computer);
 
     void addCourse(Student student, Course course);
 

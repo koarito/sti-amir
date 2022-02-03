@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class TestDao {
     ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-dao.xml");
     AmirAliDao amirAliDao = (AmirAliDao) context.getBean("DaoBean");
-    Student student = amirAliDao.addStudent("Ali", "Honein", 878, "Mac");
+    Student student = amirAliDao.createStudent("Ali", "Honein", 878, "Mac");
     Teacher teacher = Teacher.builder()
             .withGivenName("Özgur")
             .withSurname("Kibar")
@@ -35,7 +35,7 @@ public class TestDao {
 
     @Test
     public void testAddStudent() {
-        Student student = amirAliDao.addStudent("Ali", "Honein", 878, "Mac");
+        Student student = amirAliDao.createStudent("Ali", "Honein", 878, "Mac");
         Assert.assertEquals(student.getSurname(), "Honein");
         amirAliDao.addCourse(student, course1);
     }
