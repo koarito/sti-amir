@@ -68,7 +68,7 @@ public class EndpointService {
 
     @GetMapping("/getstudent")
     @ApiOperation(value = "Returns student from list with personnummer as input")
-    public Student getStudent(@RequestParam int personmr) {
+    public Student getStudent(@RequestParam long personmr) {
         return amirAliService.getStudent(personmr,stiStudents.getStudents());
     }
 
