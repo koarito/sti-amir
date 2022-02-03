@@ -16,8 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/service")
 public class EndpointService {
-    ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-service.xml");
-    AmirAliService amirAliService = (AmirAliService) context.getBean("ServiceBean");
+    private ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-service.xml");
+    private AmirAliService amirAliService = (AmirAliService) context.getBean("ServiceBean");
 
     private StiStudents stiStudents;
     public EndpointService() {

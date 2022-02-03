@@ -27,6 +27,10 @@
             <groupId>se.sti</groupId>
             <artifactId>sti-amir-ali-dao</artifactId>
         </dependency>
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-amir-ali-dao-impl</artifactId>
+        </dependency>
 
     </dependencies>
 
