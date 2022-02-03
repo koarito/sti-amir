@@ -2,17 +2,21 @@ package sti.amir.ali.service;
 
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import sti.amir.ali.dao.AmirAliDao;
 import sti.amir.ali.domain.Course;
 import sti.amir.ali.domain.Student;
 import sti.amir.ali.domain.Teacher;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AmirAliServiceImpl implements AmirAliService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AmirAliServiceImpl.class);
+    ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-dao.xml");
+    AmirAliDao amirAliDao = (AmirAliDao) context.getBean("DaoBean");
 
     @Override
     public Student getStudent(int personNmr, List<Student> students) {
@@ -34,6 +38,7 @@ public class AmirAliServiceImpl implements AmirAliService{
 
     @Override
     public Student addStudent(String givenName, String surname, List<Course> courses, String computer, int personmr) {
+        amirAliDao.addStudent(givenName,surname,personmr,computer);
         return Student.builder()
                 .withGivenName(givenName)
                 .withSurname(surname)

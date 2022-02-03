@@ -10,9 +10,13 @@
         <module name="sti-amir-ali-service" />
         <module name="sti-amir-ali-dao-impl" />
         <module name="sti-amir-ali-service-impl" />
-        <module name="sti-amir-ali-domain" />
         <module name="sti-amir-ali-dao" />
+        <module name="sti-amir-ali-endpoint" />
+        <module name="sti-amir-ali-domain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sti-amir-ali-test-endpoint" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

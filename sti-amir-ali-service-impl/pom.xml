@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.13</version>
+        </dependency>
+
         <dependency>
             <groupId>se.sti</groupId>
             <artifactId>sti-amir-ali-service</artifactId>
@@ -15,6 +22,10 @@
             <groupId>se.sti</groupId>
             <artifactId>sti-amir-ali-domain</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-amir-ali-dao</artifactId>
         </dependency>
 
     </dependencies>

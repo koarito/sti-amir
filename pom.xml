@@ -30,28 +30,22 @@
         <module>sti-amir-ali-dao</module>
         <module>sti-amir-ali-dao-impl</module>
         <module>sti-amir-ali-test-unit</module>
+        <module>sti-amir-ali-endpoint</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>5.3.13</version>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-dao</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>5.3.13</version>
+                <groupId>se.sti</groupId>
+                <artifactId>sti-amir-ali-dao-impl</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>5.3.13</version>
-            </dependency>
-
 
             <dependency>
                 <groupId>se.sti</groupId>
@@ -71,17 +65,6 @@
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
-            <dependency>
-                <groupId>se.sti</groupId>
-                <artifactId>sti-amir-ali-dao</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>se.sti</groupId>
-                <artifactId>sti-amir-ali-dao-impl</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
 
             <dependency>
                 <groupId>se.sti</groupId>
@@ -89,11 +72,75 @@
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>5.3.13</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>5.3.13</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>5.3.13</version>
+            </dependency>
 
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.28</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.13.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>2.13.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>20.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>5.3.15</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>5.3.15</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>2.5.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.5.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
