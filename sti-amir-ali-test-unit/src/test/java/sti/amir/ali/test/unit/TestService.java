@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sti.amir.ali.domain.Course;
 import sti.amir.ali.domain.Student;
+import sti.amir.ali.domain.Teacher;
 import sti.amir.ali.service.AmirAliService;
 
 import java.util.Arrays;
@@ -17,13 +18,19 @@ public class TestService {
 
     @Test
     public void test() {
+        Teacher teacher = Teacher.builder()
+                .withSurname("Kibar")
+                .build();
+
         Course course1 = Course.builder()
+                .withTeacher(teacher)
                 .withName("Java")
                 .withCourseCode(975)
                 .build();
 
         Course course2 = Course.builder()
                 .withName("Python")
+                .withTeacher(teacher)
                 .build();
         List<Course> courses = Arrays.asList(course1, course2);
         Student student1 = Student.builder()

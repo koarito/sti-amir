@@ -1,14 +1,14 @@
 package sti.amir.ali.dao;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+//import com.sun.org.slf4j.internal.Logger;
+//import com.sun.org.slf4j.internal.LoggerFactory;
 import sti.amir.ali.domain.Course;
 import sti.amir.ali.domain.Student;
 
 import java.sql.*;
 
 public class AmirAliDaoImpl implements AmirAliDao {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AmirAliDaoImpl.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(AmirAliDaoImpl.class);
 
     @Override
     public Connection getConnection() throws SQLException {
@@ -32,7 +32,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             statement.setString(4, computer);
             result = statement.execute();
         } catch (SQLException sqlException) {
-            LOGGER.error("Couldn't execute sql statement", sqlException);
+            //LOGGER.error("Couldn't execute sql statement", sqlException);
         } finally {
             try {
                 statement.close();
@@ -63,7 +63,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             statement.setInt(4, course.getAmountOfHours());
             result = statement.execute();
         } catch (SQLException sqlException) {
-            LOGGER.error("Couldn't execute sql statement", sqlException);
+            //LOGGER.error("Couldn't execute sql statement", sqlException);
         } finally {
             try {
                 statement.close();
@@ -83,7 +83,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             statement.setInt(2, course.getCourseCode());
             result = statement.execute();
         } catch (SQLException sqlException) {
-            LOGGER.error("Couldn't execute sql statement", sqlException);
+            //LOGGER.error("Couldn't execute sql statement", sqlException);
         } finally {
             try {
                 statement.close();
@@ -111,7 +111,7 @@ public class AmirAliDaoImpl implements AmirAliDao {
             statement.setInt(2,courseCode);
                     result = statement.execute();
         } catch (SQLException sqlException) {
-            LOGGER.error("Couldn't execute sql statement", sqlException);
+            //LOGGER.error("Couldn't execute sql statement", sqlException);
         } finally {
             try {
                 statement.close();

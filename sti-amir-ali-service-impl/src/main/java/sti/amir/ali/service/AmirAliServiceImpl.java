@@ -1,7 +1,7 @@
 package sti.amir.ali.service;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+//import com.sun.org.slf4j.internal.Logger;
+//import com.sun.org.slf4j.internal.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sti.amir.ali.dao.AmirAliDao;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class AmirAliServiceImpl implements AmirAliService{
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AmirAliServiceImpl.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(AmirAliServiceImpl.class);
     ApplicationContext context = new ClassPathXmlApplicationContext("sti-amir-ali-dao.xml");
     AmirAliDao amirAliDao = (AmirAliDao) context.getBean("DaoBean");
 
@@ -29,10 +29,10 @@ public class AmirAliServiceImpl implements AmirAliService{
         try {
             System.out.printf("%s %s %s \n", student.getGivenName(), student.getSurname(), student.coursesToString());
         } catch (NullPointerException e) {
-            LOGGER.error("Failed to find student with that personummer",e);
+            //LOGGER.error("Failed to find student with that personummer",e);
             return null;
         }
-        LOGGER.trace("Student found");
+        //LOGGER.trace("Student found");
         return student;
     }
 
@@ -55,7 +55,7 @@ public class AmirAliServiceImpl implements AmirAliService{
         courses.add(course);
         amirAliDao.addCourse(student, course);
         student.setCourses(courses);
-        LOGGER.trace("Course added to student");
+        //LOGGER.trace("Course added to student");
 
     }
     @Override
@@ -64,7 +64,7 @@ public class AmirAliServiceImpl implements AmirAliService{
     courses.removeIf(x -> x.getCourseCode() == courseCode);
     amirAliDao.removeCourse(student, courseCode);
     student.setCourses(courses);
-        LOGGER.trace("Course removed from student");
+        //LOGGER.trace("Course removed from student");
     }
 
     @Override
