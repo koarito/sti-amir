@@ -27,11 +27,7 @@ public class TestDao {
             .withCourseCode(975)
             .withTeacher(teacher)
             .build();
-    @Test
-    public void testGetConnection() throws SQLException {
-        Connection connection = amirAliDao.getConnection();
-        Assert.assertNotNull(connection);
-    }
+    
 
     @Test
     public void testAddStudent() {
